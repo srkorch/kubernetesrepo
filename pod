@@ -1,0 +1,20 @@
+Pods: 
+Pod is a smallest deployable object  that can run in your k8s cluster.
+A Pod can have  group of one or more containers,
+
+# Imperative way of creating pod:
+
+kubectl run first-pod --image nginx
+
+# Declarative way of creating pod:
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx123
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
